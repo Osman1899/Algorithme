@@ -1,0 +1,28 @@
+ALGORITHM AnalyzeSentence
+    VARIABLES
+        sentence: STRING
+        length, numWords, numVowels: INTEGER
+    BEGIN
+        length <- 0
+        numWords <- 0
+        numVowels <- 0
+        READ sentence
+
+        FOR each character IN sentence DO
+            length <- length + 1
+            
+            IF character IS A VOWEL THEN
+                numVowels <- numVowels + 1
+            END IF
+
+            IF character = ' ' THEN
+                numWords <- numWords + 1
+            END IF
+        END FOR
+
+        numWords <- numWords + 1
+
+        PRINT "Le nombre de caractere est:", length
+        PRINT "Le nombre de mots dans la phrase est:", numWords
+        PRINT "Le nombre de voyelles dans la phrase est:", numVowels
+    END
